@@ -1,0 +1,118 @@
+.toggles-info {
+  border-top: 1px solid darkgray;
+  transition: .2s;
+  text-align: center;
+  margin-top: 1rem;
+  padding: 2rem;
+  max-width: 30em;
+}
+.toggles-info > div {
+  overflow: hidden;
+}
+.toggles-info > div span {
+  position: relative;
+  display: inline-block;
+  min-width: 2.5rem;
+}
+.toggles-info > div span[on] {
+  color: #0078d7;
+  float: left;
+}
+.toggles-info > div span[off] {
+  color: black;
+  float: left;
+}
+.toggles-info > div span[click] {
+  color: gray;
+  margin-left: .5rem;
+  float: left;
+}
+
+.disappear-from-screen, .toggle input {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.toggle-component {
+  margin-bottom: 3rem;
+}
+.toggle-component p {
+  margin: .7rem 0;
+}
+
+.toggle {
+  display: table;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  margin-bottom: 1rem;
+}
+.toggle input:focus + div {
+  text-decoration: underline;
+}
+.toggle > div {
+  cursor: pointer;
+  border-radius: 2rem;
+  width: 5rem;
+  height: 2rem;
+  background: white;
+  border: 2px solid black;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: relative;
+  transition: 200ms ease-out;
+  font-size: 0;
+}
+.toggle > div:hover {
+  box-shadow: 0 0 6px #005ca4;
+}
+.toggle > div:before {
+  will-change: translate;
+  display: block;
+  position: absolute;
+  top: calc(50% - .5rem);
+  left: .5rem;
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  background: black;
+  border-radius: 50%;
+  transition: 200ms;
+}
+.toggle > div:after {
+  font-size: 1rem;
+  position: absolute;
+  right: -50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  content: attr(data-off);
+  pointer-events: none;
+}
+.toggle input:checked + div {
+  background: #0078d7;
+  border-color: #0078d7;
+}
+.toggle input:checked + div:before {
+  color: #0078d7;
+  -webkit-transform: translateX(280%);
+          transform: translateX(280%);
+  -webkit-transform: translateX(calc(2.5*100% + 4px));
+          transform: translateX(calc(2.5*100% + 4px));
+  background: white;
+}
+.toggle input:checked + div:after {
+  content: attr(data-on);
+}
+
+
+
+.accordion { background-color: #eee; color: #444; cursor: pointer; padding: 18px; width: 100%; border: none; text-align: left; outline: none; font-size: 15px; transition: 0.4s; }
+.active, .accordion:hover { background-color: #ccc; }
+.panel { padding: 0 18px; display: none; background-color: white; overflow: hidden;}
